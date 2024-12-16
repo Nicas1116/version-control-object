@@ -1,0 +1,10 @@
+.env
+.git/
+vendor/
+node_modules/
+storage/logs/*
+storage/debugbar/*
+.idea/
+*.log
+*.sqlite
+.DS_Store
