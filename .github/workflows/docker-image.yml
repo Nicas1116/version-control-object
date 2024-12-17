@@ -6,13 +6,6 @@ on:
   pull_request:
     branches: [ "staging" ]
 
-
-env:
-  PROJECT_ID: 'eminent-tesla-126408'
-  REGION: 'us-central1'
-  SERVICE: 'version-control-object'
-  WORKLOAD_IDENTITY_PROVIDER: ${{secrets.WORKLOG_IDENTITY_PROVIDER}}
-
 jobs:
 
   build:
@@ -35,5 +28,5 @@ jobs:
       run: docker exec vcapp php artisan migrate --force
 
     - name: Run tests with coverage
-      run: docker exec vcapp php artisan test --coverage-text
+      run: docker exec vcapp php artisan test
 
