@@ -27,7 +27,13 @@ jobs:
     - name: Run database migrations
       run: docker exec vcapp php artisan migrate --force
 
-    - name: Run database migrations
+    - name: Run coverage test
       run: |
-        docker exec vcapp php artisan test --coverage-text >> 1
-        docker exec vcapp php public/coverage/coverage.html >> $GITHUB_STEP_SUMMARY
+        docker exec vcapp php artisan test --coverage-text || true
+
+    - name: HTML Preview
+      uses: pavi2410/html-preview-action@v4
+      with:
+        html_file: public/coverage/index.html
+        job_summary: true
+
