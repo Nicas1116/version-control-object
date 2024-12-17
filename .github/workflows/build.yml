@@ -26,3 +26,6 @@ jobs:
 
     - name: Run database migrations
       run: docker exec vcapp php artisan migrate --force
+
+    - name: Run database migrations
+      run: docker exec vcapp php artisan test --coverage-text
