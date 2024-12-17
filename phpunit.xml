@@ -34,8 +34,7 @@
         <report>
             <clover outputFile="./public/coverage/coverage_clover.xml"/>
             <html  outputDirectory="./public/coverage/"/>
-
-        </report>
+ >>         </report>
     </coverage>
     <logging>
         <testdoxHtml outputFile="./public/coverage/coverage.html"/>

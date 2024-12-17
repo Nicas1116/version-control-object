@@ -28,4 +28,6 @@ jobs:
       run: docker exec vcapp php artisan migrate --force
 
     - name: Run database migrations
-      run: docker exec vcapp php artisan test --coverage-text
+      run: |
+        docker exec vcapp php artisan test --coverage-text >> 1
+        docker exec vcapp php public/coverage/coverage.html >> $GITHUB_STEP_SUMMARY
