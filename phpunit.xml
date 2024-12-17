@@ -32,10 +32,12 @@
     </php>
     <coverage>
         <report>
-            <clover outputFile="./storage/coverage_clover.xml"/>
+            <clover outputFile="./public/coverage/coverage_clover.xml"/>
+            <html  outputDirectory="./public/coverage/"/>
+
         </report>
     </coverage>
     <logging>
-        <testdoxHtml outputFile="./storage/coverage.html"/>
+        <testdoxHtml outputFile="./public/coverage/coverage.html"/>
     </logging>
 </phpunit>
