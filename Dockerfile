@@ -17,5 +17,5 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 COPY composer.json .
 COPY . .
-RUN composer install
+RUN composer install --no-dev
 CMD php artisan serve --host=0.0.0.0 --port=8000
